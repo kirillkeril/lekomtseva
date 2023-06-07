@@ -3,6 +3,8 @@ const express = require('express');
 const expressHbs = require('express-handlebars');
 const hbs = require('hbs');
 
+const PORT = process.env.PORT || 80;
+
 app = express();
 app.engine(
     'hbs',
@@ -23,4 +25,4 @@ app.use('/some-lesson', (req,res) => {
 app.use('/', (req, res) => {
     res.render('index');
 });
-app.listen(process.env.PORT);
+app.listen(PORT);
