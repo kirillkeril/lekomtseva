@@ -23,4 +23,4 @@ app.use('/some-lesson', (req,res) => {
 app.use('/', (req, res) => {
     res.render('index');
 });
-app.listen(80);
+app.listen(process.env.PORT);
