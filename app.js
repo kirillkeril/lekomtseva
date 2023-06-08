@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 80;
 app = express()
 app.use(express.static('static'))
 
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
+});
 app.get('/', (req, res) => {
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
@@ -29,9 +32,6 @@ app.get('/', (req, res) => {
 // app.use('/', (req, res) => {
 //     res.render('index');
 // });
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
 
 
 module.exports = app
