@@ -8,6 +8,7 @@ let restart = document.getElementById("restart");
 let userScore = document.getElementById("user-score");
 let startScreen = document.querySelector(".start-screen");
 let startButton = document.getElementById("start-button");
+let lastResultContainer = document.getElementById('last-result');
 let questionCount;
 let scoreCount = 0;
 let count = 11;
@@ -36,6 +37,10 @@ nextBtn.addEventListener(
             console.log(questionCount, quizArray.length);
             userScore.innerHTML =
                 "Ваш результат " + scoreCount + " из " + questionCount;
+            if (parseInt(scoreCount) <= 5) userScore.classList.add('bad');
+            else userScore.classList.remove('bad');
+            lastResult = scoreCount;
+            saveLessonResult(LESSON_NAME, lastResult);
         } else {
             //display questionCount
             countOfQuestion.innerHTML =
@@ -125,6 +130,7 @@ function checker(userOption) {
 }
 //initial setup
 function initial() {
+
     quizContainer.innerHTML = "";
     questionCount = 0;
     scoreCount = 0;
@@ -142,6 +148,15 @@ startButton.addEventListener("click", () => {
 });
 //hide quiz and display start screen
 window.onload = () => {
+    lastResultContainer.classList.add("hide");
     startScreen.classList.remove("hide");
     displayContainer.classList.add("hide");
+
+    if (lastResult !== undefined) {
+        lastResultContainer.classList.remove('hide');
+        if (parseInt(lastResult) <= 5) lastResultContainer.classList.add('bad');
+        else lastResultContainer.classList.remove('bad');
+        lastResultContainer.innerText = `Предыдущий результат: ${lastResult}`;
+    }
 };
+

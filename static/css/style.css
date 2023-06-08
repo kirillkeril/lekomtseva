@@ -174,5 +174,15 @@ a, a:active, a:visited {
 }
 #user-score {
     font-size: 1.5em;
+    color: #689f38;
+}
+
+#last-result {
+    margin: 1rem auto 3rem auto;
+    text-transform: uppercase;
+    color: #689f38;
+    font-weight: bold;
+}
+#last-result.bad {
     color: #d32f2f;
 }
