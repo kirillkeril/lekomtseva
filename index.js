@@ -1,4 +1,3 @@
-// import * as path from "path";
 import express from 'express';
 import expressHbs from 'express-handlebars';
 import hbs from 'hbs';
@@ -7,10 +6,13 @@ const PORT = process.env.PORT || 80;
 
 const app = express()
 app.use(express.static('static'))
+
 console.log("СУКА")
+
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
+
 app.engine(
     'hbs',
     expressHbs.engine({
@@ -29,6 +31,3 @@ app.use('/some-lesson', (req,res) => {
 app.use('/', (req, res) => {
     res.render('index');
 });
-
-
-// module.exports = app
