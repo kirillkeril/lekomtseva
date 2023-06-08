@@ -5,8 +5,8 @@ const hbs = require('hbs');
 
 const PORT = process.env.PORT || 80;
 
-app = express();
-app.use(express.static('static'));
+app = express()
+app.use(express.static('static'))
 
 app.get('/', (req, res) => {
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
