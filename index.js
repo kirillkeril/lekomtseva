@@ -1,6 +1,6 @@
-import express from 'express';
-import expressHbs from 'express-handlebars';
-import hbs from 'hbs';
+const express = require('express');
+const expressHbs = require('express-handlebars');
+const hbs  = require('hbs');
 
 const PORT = process.env.PORT || 80;
 
