@@ -25,4 +25,7 @@ app.use('/some-lesson', (req,res) => {
 app.use('/', (req, res) => {
     res.render('index');
 });
-app.listen(PORT);
+// app.listen(PORT);
+
+
+module.exports = app

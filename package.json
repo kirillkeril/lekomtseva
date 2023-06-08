@@ -2,10 +2,10 @@
   "name": "lekomtseva",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "nodemon index.js",
-    "dev": "node index.js"
+    "test": "nodemon app.js",
+    "dev": "node app.js"
   },
   "author": "",
   "license": "ISC",
