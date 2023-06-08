@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 80;
 
 app = express()
 app.use(express.static('static'))
-
+console.log("СУКА")
 app.listen(PORT, () => {
     console.log(`Server started on port ${PORT}`);
 });
