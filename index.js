@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const expressHbs = require('express-handlebars');
 const hbs  = require('hbs');
 
@@ -23,7 +24,7 @@ app.engine(
 );
 app.set('view engine', 'hbs');
 
-hbs.registerPartials('/views/partials');
+hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
 app.use('/some-lesson', (req,res) => {
     res.render('someLesson')
