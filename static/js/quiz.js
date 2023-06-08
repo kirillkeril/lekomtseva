@@ -152,7 +152,7 @@ window.onload = () => {
     startScreen.classList.remove("hide");
     displayContainer.classList.add("hide");
 
-    if (lastResult !== undefined) {
+    if (lastResult !== null) {
         lastResultContainer.classList.remove('hide');
         if (parseInt(lastResult) <= 5) lastResultContainer.classList.add('bad');
         else lastResultContainer.classList.remove('bad');
