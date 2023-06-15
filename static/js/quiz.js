@@ -93,12 +93,15 @@ function quizCreator() {
         question_DIV.innerHTML = i.question;
         div.appendChild(question_DIV);
         //options
-        div.innerHTML += `
-    <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
-     <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
-      <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
-       <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
-    `;
+        i.options.map((item) => {
+            div.innerHTML += `<button class="option-div" onclick="checker(this)">${item}</button>`;
+        })
+    //      `
+    // <button class="option-div" onclick="checker(this)">${i.options[0]}</button>
+    //  <button class="option-div" onclick="checker(this)">${i.options[1]}</button>
+    //   <button class="option-div" onclick="checker(this)">${i.options[2]}</button>
+    //    <button class="option-div" onclick="checker(this)">${i.options[3]}</button>
+    // `;
         quizContainer.appendChild(div);
     }
 }
@@ -152,9 +155,9 @@ window.onload = () => {
     startScreen.classList.remove("hide");
     displayContainer.classList.add("hide");
 
-    if (lastResult !== null) {
+    if (lastResult) {
         lastResultContainer.classList.remove('hide');
-        if (parseInt(lastResult) <= 5) lastResultContainer.classList.add('bad');
+        if (parseInt(lastResult)/quizArray.length <= 0.5) lastResultContainer.classList.add('bad');
         else lastResultContainer.classList.remove('bad');
         lastResultContainer.innerText = `Предыдущий результат: ${lastResult}`;
     }

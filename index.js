@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('node:path');
 const expressHbs = require('express-handlebars');
 const hbs  = require('hbs');
+const lessonsRouter= require('./lesson-router')
 
 // const {initializeApp} = require('firebase/app');
 // const {getDatabase, ref, set} = require('firebase/database');
@@ -50,9 +51,7 @@ app.set('view engine', 'hbs');
 
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
-app.use('/some-lesson', (req,res) => {
-    res.render('someLesson')
-});
+app.use('/lessons', lessonsRouter);
 app.use('/', (req, res) => {
     res.render('index');
 });
