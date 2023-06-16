@@ -37,7 +37,7 @@ nextBtn.addEventListener(
             console.log(questionCount, quizArray.length);
             userScore.innerHTML =
                 "Ваш результат " + scoreCount + " из " + questionCount;
-            if (parseInt(scoreCount) <= 5) userScore.classList.add('bad');
+            if (parseInt(scoreCount)/quizArray.length <= 0.5) userScore.classList.add('bad');
             else userScore.classList.remove('bad');
             lastResult = scoreCount;
             saveLessonResult(LESSON_NAME, lastResult);
