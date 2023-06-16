@@ -25,5 +25,8 @@ router.get('/t1l1s6', (req, res) => {
 router.get('/t1l1s7', (req, res) => {
     res.render('t1l1s7');
 });
+router.get('/t1l1test', (req, res) => {
+    res.render('t1l1test');
+});
 
 module.exports = router;
