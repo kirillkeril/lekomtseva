@@ -11,7 +11,11 @@ let startButton = document.getElementById("start-button");
 let lastResultContainer = document.getElementById('last-result');
 let questionCount;
 let scoreCount = 0;
-let count = setCounter || 11;
+
+let count;
+if(setCounter !== undefined || setCounter !== null) count = setCounter;
+else count = 11;
+
 let countdown;
 
 
@@ -47,7 +51,8 @@ nextBtn.addEventListener(
                 questionCount + 1 + " из " + quizArray.length + " вопросов";
             //display quiz
             quizDisplay(questionCount);
-            count = setCounter || 11;
+            if(setCounter) count = setCounter;
+            else count = 11;
             clearInterval(countdown);
             timerDisplay();
         }
@@ -137,7 +142,8 @@ function initial() {
     quizContainer.innerHTML = "";
     questionCount = 0;
     scoreCount = 0;
-    count = setCounter || 11;
+    if(setCounter) count = setCounter;
+    else count = 11;
     clearInterval(countdown);
     timerDisplay();
     quizCreator();
