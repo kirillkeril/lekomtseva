@@ -13,7 +13,8 @@ let questionCount;
 let scoreCount = 0;
 
 let count;
-if(setCounter !== undefined || setCounter !== null) count = setCounter;
+
+if(setCounter) count = setCounter;
 else count = 11;
 
 let countdown;
